@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Note learner</title>
+    <title>Note learner</title>    
     <link rel="stylesheet" href="stylesheets/main.css">
 </head>
 
@@ -15,12 +15,9 @@
         <h2 class="note"></h2>
         <button class="button button_start">Start</button>
 
-
-
-
         <div class="fretboard fretboard_dark">
 
-            <table cellspacing="0" cellpadding="0">
+            <table cellspacing="0" cellpadding="0" class="frets__container">
                 <tr class="frets">
                     <td class="fret"></td>
                     <td class="fret"></td>
@@ -37,21 +34,21 @@
                 </tr>
             </table>
 
-            <div class="dots">
+            <div class="dot-inlays">
                 <div class="dot dot__3"></div>
                 <div class="dot dot__5"></div>
                 <div class="dot dot__7"></div>
                 <div class="dot dot__9"></div>
-                <div class="dot dot__12_1"></div>
-                <div class="dot dot__12_2"></div>
+                <div class="dot dot__12_top"></div>
+                <div class="dot dot__12_bottom"></div>
             </div>
             
-            <div class="bars hide">
-                <div class="bar bar__3"></div>
-                <div class="bar bar__5"></div>
-                <div class="bar bar__7"></div>
-                <div class="bar bar__9"></div>
-                <div class="bar bar__12"></div>
+            <div class="block-inlays hide">
+                <div class="block bar__3"></div>
+                <div class="block bar__5"></div>
+                <div class="block bar__7"></div>
+                <div class="block bar__9"></div>
+                <div class="block bar__12"></div>
             </div>
 
 
@@ -72,28 +69,30 @@
 
         </div>
         
-        <label class="switch" >
-            <input type="checkbox" role="checkbox" aria-checked="false">
-            <span class="slider"></span>
-            <div class="bass-option">Bass</div>
-            <div class="guitar-option">Guitar</div>
-        </label>
-
-        <div class="time-selector">
-            <label for="time">Interval of </label>
-            <select name="time" id="time">
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-            </select>
-            <label for="time">seconds</label>
-
-        </div>
+        
 
     </main>
+    <div class="nav">
+            <label class="switch" >
+                <input type="checkbox" role="checkbox" aria-checked="false">
+                <span class="slider"></span>
+                <div class="bass-option">Bass</div>
+                <div class="guitar-option">Guitar</div>
+            </label>
 
+            <div class="time-selector">
+                <label for="time">Interval of </label>
+                <select name="time" id="time">
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+                <label for="time">seconds</label>
+            </div>
+            
+        </div>
 
     <script src="/main.js"></script>
 </body>

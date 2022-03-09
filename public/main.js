@@ -1,6 +1,6 @@
 const title = document.querySelector('.title');
-const dots = document.querySelector('.dots');
-const bars = document.querySelector('.bars');
+const dots = document.querySelector('.dot-inlays');
+const blocks = document.querySelector('.block-inlays');
 const note = document.querySelector('.note');
 const stringsGuitar = document.querySelector('.strings_guitar');
 const stringsBass = document.querySelector('.strings_bass');
@@ -23,14 +23,14 @@ let currentString = stringA;
 switcher.addEventListener('click', () => {
     if (switcher.ariaChecked == 'false') {
     unhide(stringsGuitar);
-    unhide(bars);
+    unhide(blocks);
     hide(stringsBass);
     hide(dots);
 
     switcher.setAttribute("aria-checked", "true");
     }   else {
     hide(stringsGuitar);
-    hide(bars);
+    hide(blocks);
     unhide(stringsBass);
     unhide(dots);
 

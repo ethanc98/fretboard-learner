@@ -11,6 +11,7 @@ body {
     height: 100vh;
     width: 100vw;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #333;
@@ -20,14 +21,12 @@ body {
     position: relative;
     width: 1200px;
     height: 600px;
-    /* border: solid black 1px; */
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
     background-color: white;
     border-radius: 25px;
-    
 }
 
 .title {
@@ -44,198 +43,174 @@ body {
     font-size: 4rem;
 }
 
-/* fretwidth: 5px 0.5%
-totalfretwidth: 60 */
+/* fretboard and frets */
+    .fretboard {
+        background-color: #d4a853;
+        border-radius: 4px;
+        width: 1000px;
+        height: 200px;
+        position: absolute;
+    }
 
-.fretboard {
-    background-color: #d4a853;
-    border-radius: 4px;
-    width: 1000px;
-    height: 200px;
-    position: absolute;
-}
+    .frets__container {
+        width: 100%;
+    }
+    .fret {
+        height: 200px;
+        border-right: 5px grey solid;
+        box-sizing: border-box;
+    }
+    .fret:nth-of-type(1) {
+        width: 11.11%;
+    }
+    .fret:nth-of-type(2) {
+        width: 10.61%;
+    }
+    .fret:nth-of-type(3) {
+        width: 10.1%;
+    }
+    .fret:nth-of-type(4) {
+        width: 9.6%;
+    }
+    .fret:nth-of-type(5) {
+        width: 9.09%;
+    }
+    .fret:nth-of-type(6) {
+        width: 8.59%;
+    }
+    .fret:nth-of-type(7) {
+        width: 8.08%;
+    }
+    .fret:nth-of-type(8) {
+        width: 7.58%;
+    }
+    .fret:nth-of-type(9) {
+        width: 7.07%;
+    }
+    .fret:nth-of-type(10) {
+        width: 6.57%;
+    }
+    .fret:nth-of-type(11) {
+        width: 6.06%;
+    }
 
-table {
-    width: 100%;
-    /* height: 100%; */
-}
 
-
-
-
-.fret {
-    /* background-color: grey; */
-    height: 200px;
-    /* width: 5px; */
-    border-right: 5px grey solid;
-    box-sizing: border-box;
-}
-
-td:nth-of-type(1) {
-    width: 11.11%;
-}
-td:nth-of-type(2) {
-    width: 10.61%;
-}
-td:nth-of-type(3) {
-    width: 10.1%;
-}
-td:nth-of-type(4) {
-    width: 9.6%;
-}
-td:nth-of-type(5) {
-    width: 9.09%;
-}
-td:nth-of-type(6) {
-    width: 8.59%;
-}
-td:nth-of-type(7) {
-    width: 8.08%;
-}
-td:nth-of-type(8) {
-    width: 7.58%;
-}
-td:nth-of-type(9) {
-    width: 7.07%;
-}
-td:nth-of-type(10) {
-    width: 6.57%;
-}
-td:nth-of-type(11) {
-    width: 6.06%;
-}
-/* td:nth-of-type(12) {
-    width: 5.56%;
-} */
-
-/* 5 41.42
-7 59.1
-9 74.767
-12 94.46 */
-
-.strings {
-    position: absolute;
-    top: 10px;
-    bottom: 10px;
-    height: 180px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.string {
-    background-color: #6e3d34;
-    background-color: #9e7d74;
-    /* border-bottom: solid 2px #9e7d74; */
-    border-bottom: solid 2px #6e3d34;
-    width: 1000px;
-}
-
-.string__e2 {
-    height: 2px;
-}
-.string__b {
-    height: 3px;
-}
-.string__g {
-    height: 4px;
-}
-.string__d {
-    height: 5px;
-}
-.string__a {
-    height: 6px;
-}
-.string__e {
-    height: 7px;
-}
-
-.current-string {
-    background-color: hotpink;
-    border-bottom: solid 1px #ffb9ff;
-    background-color: #ffb9ff;
-    border-bottom: solid 1px hotpink;
-}
+/* strings */
+    .strings {
+        position: absolute;
+        top: 6%;
+        height: 180px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .string {
+        background-color: #9e7d74;
+        border-bottom: solid 2px #6e3d34;
+        width: 1000px;
+    }
+    .string__e {
+        height: 7px;
+    }
+    .string__a {
+        height: 6px;
+    }
+    .string__d {
+        height: 5px;
+    }
+    .string__g {
+        height: 4px;
+    }
+    .string__b {
+        height: 3px;
+    }
+    .string__e2 {
+        height: 2px;
+    }
+    .current-string {
+        background-color: #ffb9ff;
+        border-bottom: solid 1px hotpink;
+    }
 
 
 
+/* block-inlays (fretboard markers) */
+    .block-inlays {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+    .block {
+        position: absolute;
+        background-color: #333;
+        height: 80%;
+        width: 11%;
+    }
+    .block:nth-of-type(1) {
+        left: 22.2%;
+        width: 8.6%;
+    }
+    .block:nth-of-type(2) {
+        left: 42%;
+        width: 7.4%;
+    }
+    .block:nth-of-type(3) {
+        left: 59.6%;
+        width: 6.5%;
+    }
+    .block:nth-of-type(4) {
+        left: 75.2%;
+        width: 5.7%;
+    }
+    .block:nth-of-type(5) {
+        left: 95%;
+        width: 4%;
+    }
 
-.bars {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    /* height: 20px; */
-    width: 100%;
-}
-.bar {
-    position: absolute;
-    background-color: #333;
-    height: 80%;
-    width: 11%;
-}
-.bar:nth-of-type(1) {
-    left: 22.2%;
-    width: 8.6%;
-}
-.bar:nth-of-type(2) {
-    left: 42%;
-    width: 7.4%;
-}
-.bar:nth-of-type(3) {
-    left: 59.6%;
-    width: 6.5%;
-}
-.bar:nth-of-type(4) {
-    left: 75.2%;
-    width: 5.8%;
-}
-.bar:nth-of-type(5) {
-    left: 95%;
-    width: 4.1%;
-}
-
-.dots {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    /* height: 20px; */
-    width: 100%;
-}
-.dot {
-    position: absolute;
-    transform: translate(-25%, 0);
-    height: 25px;
-    width: 25px;
-    background-color: #333;
-    border-radius: 50%;
-}
-.dot:nth-of-type(1) {
-    left: 25.9%;
-}
-.dot:nth-of-type(2) {
-    left: 45.1%;
-}
-.dot:nth-of-type(3) {
-    left: 62.25%;
-}
-.dot:nth-of-type(4) {
-    left: 77.4%;
-}
-.dot:nth-of-type(5) {
-    left: 96.35%;
-    top: 15%;
-}
-.dot:nth-of-type(6) {
-    left: 96.35%;
-    bottom: 15%;
-}
+/* dot-inlays (fretboard markers) */
+    .dot-inlays {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+    .dot {
+        position: absolute;
+        transform: translate(-25%, 0);
+        height: 25px;
+        aspect-ratio: 1;
+        background-color: #333;
+        border-radius: 50%;
+    }
+    .dot:nth-of-type(1) {
+        left: 25.9%;
+    }
+    .dot:nth-of-type(2) {
+        left: 45.1%;
+    }
+    .dot:nth-of-type(3) {
+        left: 62.25%;
+    }
+    .dot:nth-of-type(4) {
+        left: 77.4%;
+    }
+    .dot:nth-of-type(5) {
+        left: 96.35%;
+        top: 15%;
+    }
+    .dot:nth-of-type(6) {
+        left: 96.35%;
+        bottom: 15%;
+    }
 
 
 
@@ -246,7 +221,6 @@ td:nth-of-type(11) {
 
 .button {
     position: absolute;
-    /* bottom: 22vh; */
     bottom: -75px;
     border: none;
     border-radius: 4px;
@@ -257,115 +231,208 @@ td:nth-of-type(11) {
     background-color: #76c893;
     font-size: 1rem;
     font-weight: 800;
+    z-index: 1;
 }
 .button_stop {
     background-color: #f07167;
 }
 
 
-
-
-
-
-.switch {
-    /* background-color: #eee; */
-    cursor: pointer;
-    position: absolute;
-    bottom: -60px;
-    left: 30px;
-    display: inline-block;
-    width: 200px;
-    height: 34px;
-}
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-.slider {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    border-radius: 25px;
-    /* -webkit-transition: .4s; */
-    /* transition: .4s; */
-  }
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 50%;
-    left: 2%;
-    bottom: 4px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 25px;
-}
-
-.bass-option {
-    font-size: 1.2rem;
-    color: #333;
-    position: absolute;
-    top: 5px;
-    left: 15px;
-}
-.guitar-option {
-    font-size: 1.2rem;
-    color: #333;
-    position: absolute;
-    top: 5px;
-    right: 15px;
-}
-
-input:checked + .slider:before {
-    transform: translateX(92%);
+.nav {
+    width: 1200px;
+    top: 20px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
 }
 
 
+/* bass/guitar option selector(slider) */
+    .switch {
+        cursor: pointer;
+        position: relative;
+        left: 30px;
+        display: inline-block;
+        width: 200px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+    }
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+    .slider {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        border-radius: 25px;
+    }
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 42px;
+        width: 50%;
+        left: 2%;
+        bottom: 4px;
+        background-color: white;
+        transition: .4s;
+        border-radius: 25px;
+    }
+
+    .bass-option {
+        font-size: 1.2rem;
+        color: #333;
+        position: absolute;
+        left: 15px;
+    }
+    .guitar-option {
+        font-size: 1.2rem;
+        color: #333;
+        position: absolute;
+        right: 15px;
+    }
+
+    input:checked + .slider:before {
+        transform: translateX(92%);
+    }
 
 
 
-.time-selector {
-    letter-spacing: 0.1rem;
-    color: #eee;
-    position: absolute;
-    bottom: -60px;
-    right: 30px;
-    /* top: 0px; */
+/* interval selector */
+    .time-selector {
+        letter-spacing: 0.1rem;
+        color: #eee;
+        bottom: -60px;
+        right: 30px;
+    }
+    #time {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 600;
+        font-size: 1.5rem;
+        height: 50px;
+        width: 50px;
+        appearance: none;
+        text-align: center;
+        text-align-last: center;
+        vertical-align: middle;
+
+        border-radius: 25%;
+        border: none;
+    }
+    #time:hover {
+        cursor: pointer;
+    }
+
+    #time:focus {
+        outline: none;
+    }
+
+
+/* miscellaneous */
+    .hide {
+        visibility: hidden;
+    }
+    /* overrides transition delay to make 'hide' immediate */
+    .hide:before {
+        transition: none;
+    }
+
+    
+
+
+@media (max-width: 1000px) {
+    .container {
+        height: 55vh;
+        width: 98vw;
+    }
+    .fretboard {
+        width: 95vw;
+        height: 25vw;
+    }
+    .fret {
+        height: 25vw;
+    }
+    .strings {
+        height: 22vw;
+    }
+    .string {
+        width: 95vw;
+    }
+
+    .string__e {
+        height: 6%;
+    }
+    .string__a {
+        height: 5%;
+    }
+    .string__d {
+        height: 4%;
+    }
+    .string__g {
+        height: 3%;
+    }
+    .string__b {
+        height: 2%;
+    }
+    .string__e2 {
+        height: 1%;
+    }
+    .dot {
+        height: 10%;
+    }
+    
+/* nav (bass/guitar slider + interval selector) */
+    .nav {
+        width: 95vw;
+    }
+
+    .switch {
+        width: 80px;
+        height: 90%;
+    }
+    .slider {
+        border-radius: 10px;
+    }
+    .slider:before {
+        height: 50%;
+        width: 92%;
+        left: 4%;
+        top: 4%;
+        border-radius: 8px;
+    }
+    .bass-option {
+        position: absolute;
+        top: 15%;
+    }
+    .guitar-option {
+        position: absolute;
+        left: 15px;
+        bottom: 15%;
+    }
+    input:checked + .slider:before {
+        transform: translateY(84%);
+    }
+
+    .time-selector {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
-#time {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 600;
-    font-size: 1.5rem;
-    height: 50px;
-    width: 50px;
-    appearance: none;
-    text-align: center;
-    vertical-align: middle;
-
-    border-radius: 25%;
-    border: none;
+@media (max-width: 800px) {
+    .fret {
+        border-right: 4px grey solid;
+    }
 }
-#time:hover {
-    cursor: pointer;
-}
-
-#time:focus {
-    outline: none;
-}
-
-
-.hide {
-    visibility: hidden;
-}
-
-/* overrides transition delay to make 'hide' immediate */
-.hide:before {
-    transition: none;
+@media (max-width: 600px) {
+    .fret {
+        border-right: 3px grey solid;
+    }
 }
