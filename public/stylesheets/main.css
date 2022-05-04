@@ -108,6 +108,7 @@ body {
         background-color: #9e7d74;
         border-bottom: solid 2px #6e3d34;
         width: 1000px;
+        z-index: 10;
     }
     .string__e {
         height: 7px;

@@ -140,28 +140,29 @@ const removeString = () => {
     currentString.forEach(string => string.classList.remove('current-string'));
 }
 const updateString = (num) => { 
-        if (num === 0) {
+
+    if (num == 0) {
         stringE.forEach(string => string.classList.add('current-string'));
         currentString = stringE;
     }
-    if (num === 1) {
+    if (num == 1) {
         stringA.forEach(string => string.classList.add('current-string'));
         currentString = stringA;
     }
-    if (num === 2) {
+    if (num == 2) {
         stringD.forEach(string => string.classList.add('current-string'));
         currentString = stringD;
     }
-    if (num === 3) {
+    if (num == 3) {
         stringG.forEach(string => string.classList.add('current-string'));
         currentString = stringG;
     }
-    if (num === 4) {
+    if (num == 4) {
         stringB.forEach(string => string.classList.add('current-string'));
         currentString = stringB;
     }
-    if (num === 5) {
+    if (num == 5) {
         stringE2.forEach(string => string.classList.add('current-string'));
         currentString = stringE2;
     }
-    }
+}
